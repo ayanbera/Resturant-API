@@ -1,5 +1,6 @@
 const User = require('../model/user');
 const sendToken = require('../util/jwtToken');
+const ErrorHandler = require('../util/errorHandler');
 //Register a user => /api/v1/registeredUser
 exports.registerUser = (async (req, res, next) => {
 
@@ -31,9 +32,8 @@ exports.loginUser = (async (req, res, next) => {
     const user = await User.findOne({email}).select('+password')
 
     if(!user) {
-        res.status(400).json({
-            message: 'User not found'
-        })
+        console.log('User not found')
+       return next(new ErrorHandler('User Not found', 404));
     }
 
     const isPasswordMatched = await user.comparePassword(password);

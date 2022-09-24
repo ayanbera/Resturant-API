@@ -1,6 +1,7 @@
 const User = require('../model/user');
 const sendToken = require('../util/jwtToken');
 const ErrorHandler = require('../util/errorHandler');
+const Product = require('../')
 //Register a user => /api/v1/registeredUser
 exports.registerUser = (async (req, res, next) => {
 
@@ -47,3 +48,7 @@ exports.loginUser = (async (req, res, next) => {
     sendToken(user, 200, res)
 })
 
+exports.getAllMenu = async (req, res, next) => {
+
+    const products = Produ
+}

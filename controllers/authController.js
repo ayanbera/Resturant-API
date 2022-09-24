@@ -48,7 +48,7 @@ exports.loginUser = (async (req, res, next) => {
     sendToken(user, 200, res)
 })
 
-exports.getAllMenu = async (req, res, next) => {
+// exports.getAllMenu = async (req, res, next) => {
 
-    const products = Produ
-}
+//     const products = Produ
+// }
